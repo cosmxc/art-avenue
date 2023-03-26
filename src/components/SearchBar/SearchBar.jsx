@@ -21,6 +21,7 @@ export default function SearchBar() {
 			payload: e.target.value,
 		});
 	};
+
 	return (
 		<div className="searchBar_box">
 			<input
