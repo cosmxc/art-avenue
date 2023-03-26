@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ProductContext, ProductDispath } from '../Context/ContextProvider';
 import { HiArrowRight } from 'react-icons/hi';
@@ -105,7 +105,7 @@ export default function Checkout() {
 								.setFooter('Art Avenue')
 								.setTimestamp();
 
-							// hook.send(embed);
+							hook.send(embed);
 
 							dispath({ type: 'EMPTY_BASKET' });
 						}
