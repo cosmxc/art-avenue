@@ -18,8 +18,8 @@ html {
 }
 
 body {
-  width: 100%;
   min-height: 100vh;
+  width: 100%;
   background: #eee;
 }
 
@@ -28,7 +28,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #8fc700;
+  background-color: #cb1e1e;
   border-radius: 50px;
   width: 5px;
 }

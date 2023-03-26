@@ -9,17 +9,17 @@
 .searchBar_box input {
   height: 35px;
   width: 80%;
-  padding-right: 20px;
+  padding-left: 20px;
   border: none;
   outline: none;
   font-size: 16px;
-  border-radius: 0 5px 5px 0;
+  border-radius: 5px 0 0 5px;
   background-color: #fff;
   color: rgba(0, 0, 0, 0.6);
 }
 
 .searchBar_box input:focus{
-  border: 2px solid #ffaa00;
+  border: 2px solid #cb1e1e;
 }
 
 .searchBar_box input::placeholder {
@@ -34,8 +34,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #ffaa00;
+  background-color: #cb1e1e;
   color: #fff;
-  border-radius: 5px 0 0 5px;
+  border-radius: 0 5px 5px 0;
   font-size: 20px;
 }
