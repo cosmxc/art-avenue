@@ -62,6 +62,24 @@ let allProducts = [
     isInterest: false,
     category: 'Stickers'
 },
+{
+    id: 8,
+    title: 'Killjoy Necklace',
+    image: 'images/1.png',
+    price: 60,
+    count: 1,
+    isInterest: false,
+    category: 'Necklaces'
+},
+{
+    id: 9,
+    title: 'Sage Necklace',
+    image: 'images/1.png',
+    price: 60,
+    count: 1,
+    isInterest: false,
+    category: 'Necklaces'
+},
 ]
 
 export default allProducts

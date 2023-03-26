@@ -34,6 +34,10 @@ const filterReduce = (state, action) => {
 			return {
 				...filterItemsHandler('Stickers'),
 			};
+		case 'NECKLACES':
+			return {
+				...filterItemsHandler('Necklaces'),
+			};
 		default:
 			return state;
 	}

@@ -25,6 +25,12 @@ export default function Filter() {
 				>
 					Stickers
 				</button>
+				<button
+					onClick={() => dispath({ type: 'NECKLACES' })}
+					className="filter_btn"
+				>
+					Necklaces
+				</button>
 			</div>
 		</div>
 	);
