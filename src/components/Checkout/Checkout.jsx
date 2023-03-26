@@ -74,7 +74,7 @@ export default function Checkout() {
 					type="submit"
 					className="checkout_button"
 					onClick={() => {
-						if (name.length == 0 || number.length == 0) {
+						if (name.length <= 0 || number.length <= 0) {
 							handleClick();
 						} else {
 							navigate('/completed');
