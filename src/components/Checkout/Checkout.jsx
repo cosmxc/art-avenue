@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ProductContext, ProductDispath } from '../Context/ContextProvider';
 import { HiArrowRight } from 'react-icons/hi';
@@ -13,14 +13,9 @@ export default function Checkout() {
 	const price = state.totalPrice.toLocaleString();
 	const [name, setName] = React.useState('');
 	const [number, setNumber] = React.useState('');
+	const [isVisible, setIsVisible] = React.useState(true);
 
-	const handleNameChange = (e) => {
-		setName(e.target.value);
-	};
-
-	const handleNumberChange = (e) => {
-		setNumber(e.target.value);
-	};
+	const handleClick = () => setIsVisible(false);
 
 	const hook = new Webhook(
 		'https://discord.com/api/webhooks/1088831677289205922/ACflo9X0Zzb3eaTIK9yvHOvxWudqFPsknr-WQH5Yzw0dpVCQe1AY7pChcqoee4_texIh'
@@ -43,7 +38,6 @@ export default function Checkout() {
 				<p>
 					<label htmlFor="name">Name</label>
 					<input
-						type="text"
 						id="name"
 						name="name"
 						autoComplete="name"
@@ -51,10 +45,9 @@ export default function Checkout() {
 						aria-required="true"
 						placeholder="Enter your name"
 						value={name}
-						onChange={handleNameChange}
+						onChange={(e) => setName(e.target.value)}
 					/>
 				</p>
-
 				<p>
 					<label htmlFor="number">Mobile Number</label>
 					<input
@@ -66,7 +59,7 @@ export default function Checkout() {
 						aria-required="true"
 						placeholder="Enter your number"
 						value={number}
-						onChange={handleNumberChange}
+						onChange={(e) => setNumber(e.target.value)}
 					/>
 				</p>
 
@@ -75,34 +68,47 @@ export default function Checkout() {
 					<span className="card_price">₱ {price}</span>
 				</p>
 
+				<p className={isVisible ? 'error' : 'noerror'}>Please fill up the empty field/s</p>
+
 				<button
+					type="submit"
 					className="checkout_button"
 					onClick={() => {
-						navigate('/completed');
+						if (name.length == 0 || number.length == 0) {
+							handleClick();
+						} else {
+							navigate('/completed');
 
-						const order = state.basket
-							.map((item) => {
-								return `${item.count} ${
-									item.count > 1 ? 'items' : 'item'
-								} | ${item.title} - ₱ ${
-									item.price * item.count
-								}\n`;
-							})
-							.join('');
+							const order = state.basket
+								.map((item) => {
+									return `${item.count} ${
+										item.count > 1 ? 'items' : 'item'
+									} | ${item.title} - ₱ ${
+										item.price * item.count
+									}\n`;
+								})
+								.join('');
 
-						const embed = new MessageBuilder()
-							.setTitle('Order Form')
-							.setColor('#cb1e1e')
-							.addField(`Name:`, `\`\`\`${name}\`\`\``)
-							.addField(`Mobile Number:`, `\`\`\`${number}\`\`\``)
-							.addField(`Order:`, `\`\`\`${order}\`\`\``)
-							.addField(`Total Price:`, `\`\`\`₱ ${price}\`\`\``)
-							.setFooter('Art Avenue')
-							.setTimestamp();
+							const embed = new MessageBuilder()
+								.setTitle('Order Form')
+								.setColor('#cb1e1e')
+								.addField(`Name:`, `\`\`\`${name}\`\`\``)
+								.addField(
+									`Mobile Number:`,
+									`\`\`\`${number}\`\`\``
+								)
+								.addField(`Order:`, `\`\`\`${order}\`\`\``)
+								.addField(
+									`Total Price:`,
+									`\`\`\`₱ ${price}\`\`\``
+								)
+								.setFooter('Art Avenue')
+								.setTimestamp();
 
-						hook.send(embed);
+							// hook.send(embed);
 
-						dispath({ type: 'EMPTY_BASKET' });
+							dispath({ type: 'EMPTY_BASKET' });
+						}
 					}}
 				>
 					Checkout

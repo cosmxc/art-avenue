@@ -109,11 +109,18 @@
   color: rgba(0, 0, 0, 0.7);
 }
 
-.note {
-  font-size: 14px;
-  color: rgba(255, 0, 0, 0.6);
-}
-
 .amt {
   text-align: center;
+}
+
+.error {
+  font-size: 14px;
+  color: rgba(255, 0, 0, 0.6);
+  display: none !important;
+}
+
+.noerror {
+  font-size: 14px;
+  color: rgba(255, 0, 0, 0.6);
+  display: block !important;
 }
