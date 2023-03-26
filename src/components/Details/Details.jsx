@@ -10,8 +10,12 @@ export default function Details() {
 	const { state } = useContext(ProductContext);
 	const { dispath } = useContext(ProductDispath);
 	const params = useParams();
-	const datas = state.allProducts.find((product) => product.id == params.id);
-	const checkBasket = state.basket.some((product) => product.id == params.id);
+	const datas = state.allProducts.find(
+		(product) => product.id.toString() === params.id.toString()
+	);
+	const checkBasket = state.basket.some(
+		(product) => product.id.toString() === params.id.toString()
+	);
 
 	return (
 		<div className="details_container">
