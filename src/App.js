@@ -8,7 +8,7 @@ import ContextProvider from './components/Context/ContextProvider';
 import FavoritePage from './components/Favorite/FavoritePage';
 import Header from './components/Header/Header';
 import Products from './components/Products/Products';
-
+require('fs');
 
 function App() {
 
