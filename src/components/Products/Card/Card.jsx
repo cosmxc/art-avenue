@@ -3,6 +3,7 @@ import { FiShoppingCart } from 'react-icons/fi';
 import Interest from './Interest';
 import { ProductContext, ProductDispath } from '../../Context/ContextProvider';
 import Buttons from '../../Buttons/Buttons';
+import { Link } from 'react-router-dom';
 
 export default function Card(props) {
 	const { dispath } = useContext(ProductDispath);
@@ -13,15 +14,17 @@ export default function Card(props) {
 
 	return (
 		<div key={props.id} className="box">
-			<img className="product_img" src={props.image} alt="product" />
-			<div className="content">
-				<div className="title">
-					<span>{props.title}</span>
+			<Link to={`/${props.id}`}>
+				<img className="product_img" src={props.image} alt="product" />
+				<div className="content">
+					<div className="title">
+						<span>{props.title}</span>
+					</div>
+					<div className="price">
+						<span>₱ {props.price.toLocaleString()}</span>
+					</div>
 				</div>
-				<div className="price">
-					<span>₱ {props.price.toLocaleString()}</span>
-				</div>
-			</div>
+			</Link>
 			{checkBasket ? (
 				<Buttons {...datas} />
 			) : (

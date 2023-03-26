@@ -1,0 +1,155 @@
+.details_container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 90px 16px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.details_linkBar {
+  width: 100%;
+padding: 15px 16px;
+margin-top: 16px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+grid-gap: 10px;
+gap: 10px;
+background-color: #fff;
+border-radius: 10px;
+box-shadow: rgba(0, 0, 0, 0.08) 0px 5px 20px;
+}
+
+.details_backLink {
+  transition: all 0.3s ease;
+  color: rgba(0, 0, 0, 0.5);
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.details_linkBar span {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.details_backLink:hover {
+  color: rgba(0, 0, 0, 0.4);
+  padding-right: 5px;
+}
+
+.datails_card {
+  width: 100%;
+  max-width: 800px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 5px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  padding: 30px 25px;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.image_box {
+  width: 100%;
+  max-width: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 15px;
+  position: relative;
+}
+
+.kg_image {
+  width: 60px;
+  position: absolute;
+  bottom: -10px;
+  left: -10px;
+}
+
+.card_image {
+  width: 260px;
+}
+
+.main_content_box {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.card_category {
+  color: rgba(0, 0, 0, 0.5);
+  padding-right: 5px;
+}
+
+.card_title,
+.card_price {
+  font-size: 20px;
+}
+
+.card_content {
+  width: 100%;
+  margin-top: 20px;
+  color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.card_information {
+  width: 100%;
+  padding: 10px;
+  margin-top: 20px;
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 15px;
+}
+
+.card_buy {
+  display: block;
+  margin-top: 30px;
+  width: 100%;
+  height: 45px;
+  line-height: 35px;
+  display: block;
+  border-radius: 5px;
+  background-color: #1ecb6c;;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.card_buy:hover {
+  background-color: #1ecb6c9b;
+}
+
+.divider {
+    display: none;
+}
+
+@media screen and (min-width: 670px) {
+  .datails_card {
+    flex-direction: row;
+  }
+
+  .divider {
+    display: block;
+    margin: 0;
+    padding: 0;
+    width: 4px;
+    height: 40vh;
+    background-color: #191516;
+  }
+}

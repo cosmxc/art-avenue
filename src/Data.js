@@ -6,7 +6,9 @@ let allProducts = [
     price: 50,
     count: 1,
     isInterest: false,
-    category: 'Keychains'
+    category: 'Keychains',
+    size: '5 inches x 6 inches',
+    info: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.'
 },
 {
     id: 2,
@@ -15,7 +17,9 @@ let allProducts = [
     price: 50,
     count: 1,
     isInterest: false,
-    category: 'Keychains'
+    category: 'Keychains',
+    size: '5 inches x 6 inches',
+    info: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.'
 },
 {
     id: 3,
@@ -24,7 +28,9 @@ let allProducts = [
     price: 50,
     count: 1,
     isInterest: false,
-    category: 'Keychains'
+    category: 'Keychains',
+    size: '5 inches x 6 inches',
+    info: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.'
 },
 {
     id: 4,
@@ -33,7 +39,9 @@ let allProducts = [
     price: 50,
     count: 1,
     isInterest: false,
-    category: 'Keychains'
+    category: 'Keychains',
+    size: '5 inches x 6 inches',
+    info: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.'
 },
 {
     id: 5,
@@ -42,7 +50,9 @@ let allProducts = [
     price: 50,
     count: 1,
     isInterest: false,
-    category: 'Keychains'
+    category: 'Keychains',
+    size: '5 inches x 6 inches',
+    info: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.'
 },
 {
     id: 6,
@@ -51,7 +61,9 @@ let allProducts = [
     price: 30,
     count: 1,
     isInterest: false,
-    category: 'Stickers'
+    category: 'Stickers',
+    size: '4 inches x 5 inches',
+    info: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.'
 },
 {
     id: 7,
@@ -60,7 +72,9 @@ let allProducts = [
     price: 30,
     count: 1,
     isInterest: false,
-    category: 'Stickers'
+    category: 'Stickers',
+    size: '4 inches x 5 inches',
+    info: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.'
 },
 {
     id: 8,
@@ -69,7 +83,9 @@ let allProducts = [
     price: 60,
     count: 1,
     isInterest: false,
-    category: 'Necklaces'
+    category: 'Necklaces',
+    size: '10 cm x 10 cm',
+    info: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.'
 },
 {
     id: 9,
@@ -78,7 +94,9 @@ let allProducts = [
     price: 60,
     count: 1,
     isInterest: false,
-    category: 'Necklaces'
+    category: 'Necklaces',
+    size: '10 cm x 10 cm',
+    info: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.'
 },
 ]
 
