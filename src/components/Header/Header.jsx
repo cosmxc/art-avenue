@@ -32,7 +32,7 @@ function Header() {
 					<img className="logo_img" src="images/logo.svg" alt="" />
 				</Link>
 				<div className="search_header">
-					{pathname === '/' && <SearchBar />}
+					{pathname === '/products' && <SearchBar />}
 				</div>
 				<div className="icon_Sopping_box">
 					<Link to={'/basket'} className="shoppe_icon_box">

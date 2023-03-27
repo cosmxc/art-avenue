@@ -14,7 +14,7 @@ export default function FavoritePage() {
 			<div className="favorite_container_linkBar">
 				<div className="favorite_linkBar">
 					<span>Favorites</span>
-					<Link className="favorite_backLink" to={'/'}>
+					<Link className="favorite_backLink" to={'/products'}>
 						Go Back
 						<HiArrowRight />
 					</Link>
