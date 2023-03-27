@@ -128,7 +128,11 @@ export default function Checkout() {
 
 								if (name.length <= 0 || number.length <= 0) {
 									handleClick();
-								} else if (!numberRegex.test(number)) {
+								} else if (
+									!numberRegex.test(number) ||
+									number.length < 11 ||
+									number.length > 11
+								) {
 									setIsVisible(true);
 									setIsVisible2(true);
 									handleClick3();
