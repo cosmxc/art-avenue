@@ -49,14 +49,14 @@ export default function Checkout() {
 			<div className="checkout_card">
 				<span className="basket_send details_send">Details</span>
 				<p>
-					<label htmlFor="name">Name</label>
+					<label htmlFor="name">Full Name</label>
 					<input
 						id="name"
 						name="name"
 						autoComplete="name"
 						aria-label="name"
 						aria-required="true"
-						placeholder="Enter your name"
+						placeholder="Ex: Juan Dela Cruz"
 						value={name}
 						onChange={(e) => setName(e.target.value)}
 					/>
@@ -70,7 +70,7 @@ export default function Checkout() {
 						autoComplete="number"
 						aria-label="number"
 						aria-required="true"
-						placeholder="Enter your number"
+						placeholder="Ex: 09123456789"
 						value={number}
 						onChange={(e) => setNumber(e.target.value)}
 					/>
