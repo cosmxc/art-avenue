@@ -145,3 +145,8 @@
   margin-top: 0 !important;
   border-radius: 5px 0 0 5px !important;
 }
+
+.details_send {
+  margin-top: 0 !important;
+  font-size: 20px;
+}

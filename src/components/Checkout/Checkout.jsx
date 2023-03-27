@@ -45,7 +45,7 @@ export default function Checkout() {
 				</span>
 			</div>
 			<div className="checkout_card">
-				<span className="basket_send">Details</span>
+				<span className="basket_send details_send">Details</span>
 				<p>
 					<label htmlFor="name">Name</label>
 					<input
