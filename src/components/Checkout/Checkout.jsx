@@ -16,9 +16,11 @@ export default function Checkout() {
 	const [code, setCode] = React.useState('');
 	const [isVisible, setIsVisible] = React.useState(true);
 	const [isVisible2, setIsVisible2] = React.useState(true);
+	const [isVisible3, setIsVisible3] = React.useState(true);
 
 	const handleClick = () => setIsVisible(false);
 	const handleClick2 = () => setIsVisible2(false);
+	const handleClick3 = () => setIsVisible3(false);
 
 	const hook = new Webhook(
 		'https://discord.com/api/webhooks/1088831677289205922/ACflo9X0Zzb3eaTIK9yvHOvxWudqFPsknr-WQH5Yzw0dpVCQe1AY7pChcqoee4_texIh'
@@ -95,6 +97,10 @@ export default function Checkout() {
 					given by the seller
 				</p>
 
+				<p className={isVisible3 ? 'invalidcode' : 'validcode'}>
+					Error: Please enter a valid mobile number.
+				</p>
+
 				<p>
 					<label htmlFor="number">Checkout Code</label>
 					<div className="code">
@@ -118,10 +124,17 @@ export default function Checkout() {
 									(i) => i === code
 								);
 
+								const numberRegex = new RegExp('^[0-9]*$');
+
 								if (name.length <= 0 || number.length <= 0) {
 									handleClick();
+								} else if (!numberRegex.test(number)) {
+									setIsVisible(true);
+									setIsVisible2(true);
+									handleClick3();
 								} else if (!validcode) {
 									setIsVisible(true);
+									setIsVisible3(true);
 									handleClick2();
 								} else {
 									navigate('/completed');
