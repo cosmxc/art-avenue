@@ -10,7 +10,7 @@ export default function Completed() {
 			<div className="checkout_card">
 				<span className='msg'>Thank you for ordering!</span>
 				<button
-					className="checkout_button"
+					className="completed_button"
 					onClick={() => navigate('/')}
 				>
 					Buy again
