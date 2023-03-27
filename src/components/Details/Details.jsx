@@ -33,7 +33,6 @@ export default function Details() {
 						src={datas.image}
 						alt="card_image"
 					/>
-					<img src="images/kg.png" alt="" className="kg_image" />
 				</div>
 				<span className="divider"></span>
 				<div className="main_content_box">

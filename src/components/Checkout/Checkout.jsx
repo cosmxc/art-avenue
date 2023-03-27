@@ -4,22 +4,33 @@ import { ProductContext, ProductDispath } from '../Context/ContextProvider';
 import { HiArrowRight } from 'react-icons/hi';
 import { Webhook, MessageBuilder } from 'discord-webhook-node';
 import './Checkout.css';
+import codedata from './Code';
 
 export default function Checkout() {
 	const navigate = useNavigate();
 	const { dispath } = useContext(ProductDispath);
-
 	const { state } = useContext(ProductContext);
 	const price = state.totalPrice.toLocaleString();
 	const [name, setName] = React.useState('');
 	const [number, setNumber] = React.useState('');
+	const [code, setCode] = React.useState('');
 	const [isVisible, setIsVisible] = React.useState(true);
+	const [isVisible2, setIsVisible2] = React.useState(true);
 
 	const handleClick = () => setIsVisible(false);
+	const handleClick2 = () => setIsVisible2(false);
 
 	const hook = new Webhook(
 		'https://discord.com/api/webhooks/1088831677289205922/ACflo9X0Zzb3eaTIK9yvHOvxWudqFPsknr-WQH5Yzw0dpVCQe1AY7pChcqoee4_texIh'
 	);
+
+	const order = state.basket
+		.map((item) => {
+			return `${item.count} ${item.count > 1 ? 'pcs' : 'pc'} | ${
+				item.title
+			} - ₱ ${item.price * item.count}\n`;
+		})
+		.join('');
 
 	return (
 		<div className="checkout_container">
@@ -64,55 +75,89 @@ export default function Checkout() {
 				</p>
 
 				<p>
-					<label htmlFor="price">Amount to Pay</label>
+					<label>Items</label>
+					<span className="sum">{order}</span>
+				</p>
+
+				<p>
+					<label className="amt" htmlFor="price">
+						Amount to Pay
+					</label>
 					<span className="card_price">₱ {price}</span>
 				</p>
 
-				<p className={isVisible ? 'error' : 'noerror'}>Please fill up the empty field/s</p>
+				<p className={isVisible ? 'error' : 'noerror'}>
+					Error: Please fill up the empty field
+				</p>
 
-				<button
-					type="submit"
-					className="checkout_button"
-					onClick={() => {
-						if (name.length <= 0 || number.length <= 0) {
-							handleClick();
-						} else {
-							navigate('/completed');
+				<p className={isVisible2 ? 'invalidcode' : 'validcode'}>
+					Error: Invalid code. Please Make sure it matches the code
+					given by the seller
+				</p>
 
-							const order = state.basket
-								.map((item) => {
-									return `${item.count} ${
-										item.count > 1 ? 'items' : 'item'
-									} | ${item.title} - ₱ ${
-										item.price * item.count
-									}\n`;
-								})
-								.join('');
+				<p>
+					<label htmlFor="number">Checkout Code</label>
+					<div className="code">
+						<input
+							className="code-input"
+							type="text"
+							id="code"
+							name="code"
+							autoComplete="code"
+							aria-label="code"
+							aria-required="true"
+							placeholder="Enter the code"
+							value={code}
+							onChange={(e) => setCode(e.target.value)}
+						/>
+						<button
+							type="submit"
+							className="checkout_button"
+							onClick={() => {
+								const validcode = codedata.find(
+									(i) => i === code
+								);
 
-							const embed = new MessageBuilder()
-								.setTitle('Order Form')
-								.setColor('#cb1e1e')
-								.addField(`Name:`, `\`\`\`${name}\`\`\``)
-								.addField(
-									`Mobile Number:`,
-									`\`\`\`${number}\`\`\``
-								)
-								.addField(`Order:`, `\`\`\`${order}\`\`\``)
-								.addField(
-									`Total Price:`,
-									`\`\`\`₱ ${price}\`\`\``
-								)
-								.setFooter('Art Avenue')
-								.setTimestamp();
+								if (name.length <= 0 || number.length <= 0) {
+									handleClick();
+								} else if (!validcode) {
+									setIsVisible(true);
+									handleClick2();
+								} else {
+									navigate('/completed');
 
-							hook.send(embed);
+									const embed = new MessageBuilder()
+										.setTitle('Order Form')
+										.setColor('#cb1e1e')
+										.addField(
+											`Name:`,
+											`\`\`\`${name}\`\`\``
+										)
+										.addField(
+											`Mobile Number:`,
+											`\`\`\`${number}\`\`\``
+										)
+										.addField(
+											`Order:`,
+											`\`\`\`${order}\`\`\``
+										)
+										.addField(
+											`Total Price:`,
+											`\`\`\`₱ ${price}\`\`\``
+										)
+										.setFooter('Art Avenue')
+										.setTimestamp();
 
-							dispath({ type: 'EMPTY_BASKET' });
-						}
-					}}
-				>
-					Checkout
-				</button>
+									hook.send(embed);
+
+									dispath({ type: 'EMPTY_BASKET' });
+								}
+							}}
+						>
+							Checkout
+						</button>
+					</div>
+				</p>
 			</div>
 		</div>
 	);

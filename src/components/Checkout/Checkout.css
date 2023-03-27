@@ -7,6 +7,7 @@
   flex-direction: column;
   align-items: center;
   gap: 20px;
+  white-space: pre-wrap;
 }
 
 .checkout_linkBar {
@@ -57,11 +58,11 @@
 }
 
 .checkout_button {
-  width: 100%;
-  height: 40px;
+  width: 50%;
+  height: 35px;
   line-height: 35px;
   display: block;
-  border-radius: 5px;
+  border-radius: 0 5px 5px 0;
   border: none;
   outline: none;
   color: #fff;
@@ -73,7 +74,6 @@
   cursor: pointer;
   transition: all 0.3s ease;
   background-color: #1ecb6c;
-  margin-top: 35px;
 }
 
 .checkout_button:hover {
@@ -101,6 +101,7 @@
 .checkout_card p {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 .card_price {
@@ -113,14 +114,34 @@
   text-align: center;
 }
 
-.error {
+.error, .invalidcode {
   font-size: 14px;
   color: rgba(255, 0, 0, 0.6);
   display: none !important;
 }
 
-.noerror {
+.noerror, .validcode {
   font-size: 14px;
   color: rgba(255, 0, 0, 0.6);
   display: block !important;
+}
+
+.sum {
+  background-color: #eee;
+  padding: 5px 0 5px 20px;
+  border-radius: 5px;
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 16px;
+  margin-top: 5px;
+}
+
+.code {
+  display: flex;
+  align-items: flex-start;
+  margin-top: 5px;
+}
+
+.code-input {
+  margin-top: 0 !important;
+  border-radius: 5px 0 0 5px !important;
 }
