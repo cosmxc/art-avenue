@@ -43,7 +43,7 @@
 
 .checkout_card {
   width: 100%;
-  max-width: 800px;
+  max-width: 500px;
   background-color: #fff;
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.3) 0px 5px 20px;
@@ -74,6 +74,7 @@
   cursor: pointer;
   transition: all 0.3s ease;
   background-color: #1ecb6c;
+  font-weight: 200;
 }
 
 .checkout_button:hover {

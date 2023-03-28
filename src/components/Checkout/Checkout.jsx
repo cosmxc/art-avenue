@@ -47,7 +47,9 @@ export default function Checkout() {
 				</span>
 			</div>
 			<div className="checkout_card">
-				<span className="basket_send details_send">Details</span>
+				<span className="basket_send details_send">
+					Checkout Details
+				</span>
 				<p>
 					<label htmlFor="name">Full Name</label>
 					<input
@@ -141,6 +143,11 @@ export default function Checkout() {
 									setIsVisible3(true);
 									handleClick2();
 								} else {
+									const index = codedata.indexOf(code);
+									if (index > -1) {
+										codedata.splice(index, 1);
+									}
+									
 									navigate('/completed');
 
 									const embed = new MessageBuilder()
@@ -157,6 +164,10 @@ export default function Checkout() {
 										.addField(
 											`Order:`,
 											`\`\`\`${order}\`\`\``
+										)
+										.addField(
+											`Code:`,
+											`\`\`\`${code}\`\`\``
 										)
 										.addField(
 											`Total Price:`,

@@ -8,10 +8,10 @@ export default function Completed() {
 	return (
 		<div className="checkout_container">
 			<div className="checkout_card">
-				<span className='msg'>Thank you for ordering!</span>
+				<span className="msg">Thank you for ordering!</span>
 				<button
 					className="completed_button"
-					onClick={() => navigate('/')}
+					onClick={() => navigate('/products')}
 				>
 					Buy again
 				</button>
