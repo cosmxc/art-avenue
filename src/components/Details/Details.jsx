@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { ProductContext, ProductDispath } from '../Context/ContextProvider';
-import { HiArrowRight } from 'react-icons/hi';
+import { HiArrowLeft } from 'react-icons/hi';
 import './Details.css';
 import Buttons from '../Buttons/Buttons';
 
@@ -20,11 +20,11 @@ export default function Details() {
 	return (
 		<div className="details_container">
 			<div className="details_linkBar">
-				<span>Product Detail</span>
 				<span onClick={() => navigate(-1)} className="details_backLink">
+					<HiArrowLeft />
 					Go Back
-					<HiArrowRight />
 				</span>
+				<span>Product Detail</span>
 			</div>
 			<div className="datails_card">
 				<div className="image_box">

@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { ProductContext, ProductDispath } from '../Context/ContextProvider';
 import './FavoritePage.css';
 import { Link } from 'react-router-dom';
-import { HiArrowRight } from 'react-icons/hi';
+import { HiArrowLeft } from 'react-icons/hi';
 import FavoriteCard from './FavoriteCard';
 
 export default function FavoritePage() {
@@ -13,11 +13,11 @@ export default function FavoritePage() {
 		<>
 			<div className="favorite_container_linkBar">
 				<div className="favorite_linkBar">
-					<span>Favorites</span>
 					<Link className="favorite_backLink" to={'/products'}>
+						<HiArrowLeft />
 						Go Back
-						<HiArrowRight />
 					</Link>
+					<span>Favorites</span>
 				</div>
 			</div>
 			<div className="favorite-wrapper">
@@ -30,7 +30,7 @@ export default function FavoritePage() {
 								}
 								className="favorite_removeAll"
 							>
-                Remove All
+								Remove All
 							</button>
 						</div>
 						<div className="favorite_container">

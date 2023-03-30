@@ -11,16 +11,16 @@
 
 .details_linkBar {
   width: 100%;
-padding: 15px 16px;
-margin-top: 16px;
-display: flex;
-align-items: center;
-justify-content: space-between;
-grid-gap: 10px;
-gap: 10px;
-background-color: #fff;
-border-radius: 10px;
-box-shadow: rgba(0, 0, 0, 0.08) 0px 5px 20px;
+  padding: 15px 16px;
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  grid-gap: 10px;
+  gap: 10px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 5px 20px;
 }
 
 .details_backLink {
@@ -149,6 +149,6 @@ box-shadow: rgba(0, 0, 0, 0.08) 0px 5px 20px;
     padding: 0;
     width: 4px;
     height: 40vh;
-    background-color: #191516;
+    background-color: #490505;
   }
 }

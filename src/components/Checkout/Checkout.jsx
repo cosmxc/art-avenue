@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ProductContext, ProductDispath } from '../Context/ContextProvider';
-import { HiArrowRight } from 'react-icons/hi';
+import { HiArrowLeft } from 'react-icons/hi';
 import { Webhook, MessageBuilder } from 'discord-webhook-node';
 import './Checkout.css';
 import codedata from './Code';
@@ -34,17 +34,29 @@ export default function Checkout() {
 		})
 		.join('');
 
+	const handleNameChange = (e) => {
+		setName(e.target.value);
+	};
+
+	const handleNumberChange = (e) => {
+		setNumber(e.target.value);
+	};
+
+	const handleCodeChange = (e) => {
+		setCode(e.target.value);
+	};
+
 	return (
 		<div className="checkout_container">
 			<div className="checkout_linkBar">
-				<span>Checkout</span>
 				<span
 					onClick={() => navigate(-1)}
 					className="checkout_backLink"
 				>
+					<HiArrowLeft />
 					Go Back
-					<HiArrowRight />
 				</span>
+				<span>Checkout</span>
 			</div>
 			<div className="checkout_card">
 				<span className="basket_send details_send">
@@ -60,7 +72,7 @@ export default function Checkout() {
 						aria-required="true"
 						placeholder="Ex: Juan Dela Cruz"
 						value={name}
-						onChange={(e) => setName(e.target.value)}
+						onChange={handleNameChange}
 					/>
 				</p>
 				<p>
@@ -74,7 +86,7 @@ export default function Checkout() {
 						aria-required="true"
 						placeholder="Ex: 09123456789"
 						value={number}
-						onChange={(e) => setNumber(e.target.value)}
+						onChange={handleNumberChange}
 					/>
 				</p>
 
@@ -116,7 +128,7 @@ export default function Checkout() {
 							aria-required="true"
 							placeholder="Enter the code"
 							value={code}
-							onChange={(e) => setCode(e.target.value)}
+							onChange={handleCodeChange}
 						/>
 						<button
 							type="submit"
@@ -147,7 +159,7 @@ export default function Checkout() {
 									if (index > -1) {
 										codedata.splice(index, 1);
 									}
-									
+
 									navigate('/completed');
 
 									const embed = new MessageBuilder()
@@ -176,7 +188,7 @@ export default function Checkout() {
 										.setFooter('Art Avenue')
 										.setTimestamp();
 
-									hook.send(embed);
+									// hook.send(embed);
 
 									dispath({ type: 'EMPTY_BASKET' });
 								}

@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import './Basket.css';
 import { useNavigate, Link } from 'react-router-dom';
-import { HiArrowRight } from 'react-icons/hi';
+import { HiArrowLeft } from 'react-icons/hi';
 import { ProductContext, ProductDispath } from '../Context/ContextProvider';
 import BasketItem from './BasketItem';
 
@@ -14,11 +14,11 @@ export default function Basket() {
 		<>
 			<div className="favorite_container_linkBar">
 				<div className="favorite_linkBar">
-					<span>Basket</span>
 					<Link className="favorite_backLink" to={'/products'}>
+						<HiArrowLeft />
 						Go Back
-						<HiArrowRight />
 					</Link>
+					<span>Basket</span>
 				</div>
 			</div>
 			{state.basket.length > 0 ? (

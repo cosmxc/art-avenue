@@ -11,7 +11,7 @@
   top: 54%;
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
-  max-width: 100%;
+  max-width: 90%;
 }
 
 .title_container {
@@ -42,20 +42,21 @@
 .landing_btn button {
   display: inline-block;
   padding: 8px 20px;
-  background: #cb1e1e;
+  background: #bb1d1d;
   color: #fff;
   font-size: 16px;
   font-weight: 500;
   border-radius: 5px;
   margin-top: 20px;
   transition: all 0.3s;
-  border: 2.5px #191516 solid;
+  border: 2.5px #490505 solid;
   box-shadow: rgba(0, 0, 0, 0.2) -4px 5px 1px;
 }
 
 .landing_btn button:hover {
   cursor: pointer;
-  background: #cb1e1e9b;
+  box-shadow: none;
+  transform: translateY(5%);
 
 }
 

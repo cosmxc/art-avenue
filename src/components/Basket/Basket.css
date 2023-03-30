@@ -151,7 +151,7 @@
 }
 
 .basket_button_remove {
-  background-color: #cb1e1e;
+  background-color: #bb1d1d;
   margin-top: 15px;
 }
 
@@ -213,7 +213,7 @@
 .offerBadge {
   width: 45px;
   height: 45px;
-  background-color: #cb1e1e;
+  background-color: #bb1d1d;
   color: #fff;
   display: flex;
   align-items: center;
@@ -236,11 +236,11 @@
 }
 
 .offer_true {
-  color: #cb1e1e;
+  color: #bb1d1d;
 }
 
 .offer_false {
-  color: #cb1e1e;
+  color: #bb1d1d;
 }
 
 .send_products {

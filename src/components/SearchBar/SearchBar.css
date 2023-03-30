@@ -19,7 +19,7 @@
 }
 
 .searchBar_box input:focus{
-  border: 2px solid #cb1e1e;
+  border: 2px solid #bb1d1d;
 }
 
 .searchBar_box input::placeholder {
@@ -34,7 +34,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #cb1e1e;
+  background-color: #bb1d1d;
   color: #fff;
   border-radius: 0 5px 5px 0;
   font-size: 20px;
