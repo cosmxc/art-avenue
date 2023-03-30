@@ -99,5 +99,6 @@ let data = [
 	'ZnjdWX',
 	'AEWHZq',
 	'kCQxXn',
+	'panda',
 ];
 export default data;

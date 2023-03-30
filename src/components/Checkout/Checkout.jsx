@@ -1,19 +1,22 @@
 import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ProductContext, ProductDispath } from '../Context/ContextProvider';
+import { ProductContext } from '../Context/ContextProvider';
 import { HiArrowLeft } from 'react-icons/hi';
 import { Webhook, MessageBuilder } from 'discord-webhook-node';
 import './Checkout.css';
 import codedata from './Code';
 
-export default function Checkout() {
+export default function Checkout({
+	name,
+	setName,
+	number,
+	setNumber,
+	code,
+	setCode,
+}) {
 	const navigate = useNavigate();
-	const { dispath } = useContext(ProductDispath);
 	const { state } = useContext(ProductContext);
 	const price = state.totalPrice.toLocaleString();
-	const [name, setName] = React.useState('');
-	const [number, setNumber] = React.useState('');
-	const [code, setCode] = React.useState('');
 	const [isVisible, setIsVisible] = React.useState(true);
 	const [isVisible2, setIsVisible2] = React.useState(true);
 	const [isVisible3, setIsVisible3] = React.useState(true);
@@ -188,9 +191,7 @@ export default function Checkout() {
 										.setFooter('Art Avenue')
 										.setTimestamp();
 
-									// hook.send(embed);
-
-									dispath({ type: 'EMPTY_BASKET' });
+									hook.send(embed);
 								}
 							}}
 						>

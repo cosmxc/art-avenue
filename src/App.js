@@ -12,12 +12,37 @@ import Products from './components/Products/Products';
 import Landing from './components/Landing/Landing';
 
 function App() {
+	const [name, setName] = React.useState('');
+	const [number, setNumber] = React.useState('');
+	const [code, setCode] = React.useState('');
+
 	let router = useRoutes([
 		{ path: '/', element: <Landing /> },
 		{ path: '/:id', element: <Details /> },
 		{ path: '/products', element: <Products /> },
-		{ path: '/checkout', element: <Checkout /> },
-		{ path: '/completed', element: <Completed /> },
+		{
+			path: '/checkout',
+			element: (
+				<Checkout
+					name={name}
+					setName={setName}
+					number={number}
+					setNumber={setNumber}
+					code={code}
+					setCode={setCode}
+				/>
+			),
+		},
+		{
+			path: '/completed',
+			element: (
+				<Completed
+					name={name}
+					number={number}
+					code={code}
+				/>
+			),
+		},
 		{ path: '/favorite', element: <FavoritePage /> },
 		{ path: '/basket', element: <Basket /> },
 		{ path: '*', element: <Navigate to={'/'} /> },
