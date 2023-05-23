@@ -7,29 +7,17 @@ export default function Filter() {
 	return (
 		<div className="filter_container">
 			<div className="filter_btnBox">
-				<button
-					onClick={() => dispath({ type: 'ALL' })}
-					className="filter_btn"
-				>
+				<button onClick={() => dispath({ type: 'ALL' })} className="filter_btn">
 					All
 				</button>
-				<button
-					onClick={() => dispath({ type: 'KEYCHAINS' })}
-					className="filter_btn"
-				>
-					Keychains
+				<button onClick={() => dispath({ type: 'GENSHIN' })} className="filter_btn">
+					Genshin
 				</button>
-				<button
-					onClick={() => dispath({ type: 'STICKERS' })}
-					className="filter_btn"
-				>
-					Stickers
+				<button onClick={() => dispath({ type: 'HAIKYUU' })} className="filter_btn">
+					Haikyuu
 				</button>
-				<button
-					onClick={() => dispath({ type: 'NECKLACES' })}
-					className="filter_btn"
-				>
-					Necklaces
+				<button onClick={() => dispath({ type: 'VALORANT' })} className="filter_btn">
+					Valorant
 				</button>
 			</div>
 		</div>

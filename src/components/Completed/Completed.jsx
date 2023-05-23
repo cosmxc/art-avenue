@@ -10,9 +10,7 @@ export default function Completed(props) {
 
 	const order = state.basket
 		.map((item) => {
-			return `${item.count} ${item.count > 1 ? 'pcs' : 'pc'} | ${
-				item.title
-			} - ₱ ${item.price * item.count}\n`;
+			return `${item.count} ${item.count > 1 ? 'pcs' : 'pc'} | ${item.title} - ₱ ${item.price * item.count}\n`;
 		})
 		.join('');
 
@@ -23,27 +21,27 @@ export default function Completed(props) {
 				<div className="sum_container">
 					<p>
 						<label htmlFor="name">Name</label>
-						<span className="sum">{props.name}</span>
+						<span className="sum com">{props.name}</span>
 					</p>
+					<div className="dotted"></div>
 					<p className="ps">
 						<label htmlFor="name">Number</label>
-						<span className="sum">{props.number}</span>
+						<span className="sum com">{props.number}</span>
 					</p>
+					<div className="dotted"></div>
 					<p className="ps">
 						<label htmlFor="name">Code</label>
-						<span className="sum">{props.code}</span>
+						<span className="sum com">{props.code}</span>
 					</p>
+					<div className="dotted"></div>
 					<p className="ps">
 						<label htmlFor="name">Order</label>
-						<span className="sum">{order}</span>
+						<span className="sum com">{order}</span>
 					</p>
+					<div className="dotted"></div>
 				</div>
-				<span className="basket_send details_send">
-					Thank you for ordering!
-				</span>
-				<span className="pop">
-					This serves as your proof of payment
-				</span>
+				<span className="basket_send details_send">Thank you for ordering!</span>
+				<span className="pop">This serves as your proof of payment</span>
 				<button
 					className="completed_button"
 					onClick={() => {

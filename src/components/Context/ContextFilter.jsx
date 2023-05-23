@@ -26,17 +26,17 @@ const filterReduce = (state, action) => {
 			return {
 				...state,
 			};
-		case 'KEYCHAINS':
+		case 'GENSHIN':
 			return {
-				...filterItemsHandler('Keychains'),
+				...filterItemsHandler('Genshin'),
 			};
-		case 'STICKERS':
+		case 'HAIKYUU':
 			return {
-				...filterItemsHandler('Stickers'),
+				...filterItemsHandler('Haikyuu'),
 			};
-		case 'NECKLACES':
+		case 'VALORANT':
 			return {
-				...filterItemsHandler('Necklaces'),
+				...filterItemsHandler('Valorant'),
 			};
 		default:
 			return state;

@@ -96,3 +96,19 @@
   margin-top: -28px;
 }
 
+.com {
+  padding: 0 !important;
+  background-color: #fff !important;
+  margin-top: 0 !important;
+}
+
+.dotted {
+  border-bottom: dotted 1px rgba(0, 0, 0, 0.8);
+}
+
+.sum_container p {
+  align-items: baseline;
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: space-between !important;
+}
