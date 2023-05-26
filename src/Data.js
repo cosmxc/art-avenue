@@ -56,7 +56,7 @@ let allProducts = [
 	},
 	{
 		id: 6,
-		title: 'Dilluc Sticker',
+		title: 'Diluc Sticker',
 		image: 'images/genshin/2.png',
 		price: 25,
 		count: 1,
@@ -111,7 +111,7 @@ let allProducts = [
 	},
 	{
 		id: 11,
-		title: 'Scara Sticker',
+		title: 'Scaramouche Sticker',
 		image: 'images/genshin/7.png',
 		price: 25,
 		count: 1,
@@ -144,7 +144,7 @@ let allProducts = [
 	},
 	{
 		id: 14,
-		title: 'Yae Sticker',
+		title: 'Yae Miki Sticker',
 		image: 'images/genshin/10.png',
 		price: 25,
 		count: 1,
