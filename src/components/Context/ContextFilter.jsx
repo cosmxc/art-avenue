@@ -38,6 +38,14 @@ const filterReduce = (state, action) => {
 			return {
 				...filterItemsHandler('Valorant'),
 			};
+		case 'KEYCHAIN':
+			return {
+				...filterItemsHandler('Keychain'),
+			};
+		case 'NECKLACE':
+			return {
+				...filterItemsHandler('Necklace'),
+			};
 		default:
 			return state;
 	}
@@ -50,9 +58,7 @@ export default function ContextFilter({ children }) {
 	const [state, dispath] = useReducer(filterReduce, initialFilterState);
 	return (
 		<FilterContext.Provider value={{ state }}>
-			<FilterDispath.Provider value={{ dispath }}>
-				{children}
-			</FilterDispath.Provider>
+			<FilterDispath.Provider value={{ dispath }}>{children}</FilterDispath.Provider>
 		</FilterContext.Provider>
 	);
 }

@@ -29,13 +29,11 @@ export default function Card(props) {
 				<Buttons {...datas} />
 			) : (
 				<button
-					onClick={() =>
-						dispath({ type: 'ADD_TO_BASKET', payload: props.id })
-					}
+					onClick={() => dispath({ type: 'ADD_TO_BASKET', payload: props.id })}
 					className="products_button buy_button"
 				>
-					Add
 					<FiShoppingCart className="buy_icon" />
+					Add
 				</button>
 			)}
 			<Interest interest={props.isInterest} id={props.id} />

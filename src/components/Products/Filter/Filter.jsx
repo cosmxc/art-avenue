@@ -10,6 +10,12 @@ export default function Filter() {
 				<button onClick={() => dispath({ type: 'ALL' })} className="filter_btn">
 					All
 				</button>
+				<button onClick={() => dispath({ type: 'KEYCHAIN' })} className="filter_btn">
+					Keychain
+				</button>
+				<button onClick={() => dispath({ type: 'NECKLACE' })} className="filter_btn">
+					Necklace
+				</button>
 				<button onClick={() => dispath({ type: 'GENSHIN' })} className="filter_btn">
 					Genshin
 				</button>
