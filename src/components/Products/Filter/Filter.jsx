@@ -25,6 +25,9 @@ export default function Filter() {
 				<button onClick={() => dispath({ type: 'VALORANT' })} className="filter_btn">
 					Valorant
 				</button>
+				<button onClick={() => dispath({ type: 'BTS' })} className="filter_btn">
+					BTS
+				</button>
 			</div>
 		</div>
 	);
