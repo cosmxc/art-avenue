@@ -15,6 +15,7 @@ function App() {
 	const [name, setName] = React.useState('');
 	const [number, setNumber] = React.useState('');
 	const [code, setCode] = React.useState('');
+	const [note, setNote] = React.useState('');
 
 	let router = useRoutes([
 		{ path: '/', element: <Landing /> },
@@ -30,6 +31,8 @@ function App() {
 					setNumber={setNumber}
 					code={code}
 					setCode={setCode}
+					note={note}
+					setNote={setNote}
 				/>
 			),
 		},

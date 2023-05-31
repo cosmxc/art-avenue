@@ -6,14 +6,7 @@ import { Webhook, MessageBuilder } from 'discord-webhook-node';
 import './Checkout.css';
 import codedata from './Code';
 
-export default function Checkout({
-	name,
-	setName,
-	number,
-	setNumber,
-	code,
-	setCode,
-}) {
+export default function Checkout({ name, setName, number, setNumber, code, setCode, note, setNote }) {
 	const navigate = useNavigate();
 	const { state } = useContext(ProductContext);
 	const price = state.totalPrice.toLocaleString();
@@ -31,9 +24,7 @@ export default function Checkout({
 
 	const order = state.basket
 		.map((item) => {
-			return `${item.count} ${item.count > 1 ? 'pcs' : 'pc'} | ${
-				item.title
-			} - ₱ ${item.price * item.count}\n`;
+			return `${item.count} ${item.count > 1 ? 'pcs' : 'pc'} | ${item.title} - ₱ ${item.price * item.count}\n`;
 		})
 		.join('');
 
@@ -49,22 +40,21 @@ export default function Checkout({
 		setCode(e.target.value);
 	};
 
+	const handleNoteChange = (e) => {
+		setNote(e.target.value);
+	};
+
 	return (
 		<div className="checkout_container">
 			<div className="checkout_linkBar">
-				<span
-					onClick={() => navigate(-1)}
-					className="checkout_backLink"
-				>
+				<span onClick={() => navigate(-1)} className="checkout_backLink">
 					<HiArrowLeft />
 					Go Back
 				</span>
 				<span>Checkout</span>
 			</div>
 			<div className="checkout_card">
-				<span className="basket_send details_send">
-					Checkout Details
-				</span>
+				<span className="basket_send details_send">Checkout Details</span>
 				<p>
 					<label htmlFor="name">Full Name</label>
 					<input
@@ -99,24 +89,33 @@ export default function Checkout({
 				</p>
 
 				<p>
+					<label htmlFor="note">Note</label>
+					<input
+						type="text"
+						id="note"
+						name="note"
+						autoComplete="number"
+						aria-label="number"
+						placeholder="Ex: Dora the explorer design"
+						value={note}
+						onChange={handleNoteChange}
+					/>
+				</p>
+
+				<p>
 					<label className="amt" htmlFor="price">
 						Amount to Pay
 					</label>
 					<span className="card_price">₱ {price}</span>
 				</p>
 
-				<p className={isVisible ? 'error' : 'noerror'}>
-					Error: Please fill up the empty field
-				</p>
+				<p className={isVisible ? 'error' : 'noerror'}>Error: Please fill up the empty field</p>
 
 				<p className={isVisible2 ? 'invalidcode' : 'validcode'}>
-					Error: Invalid code. Please Make sure it matches the code
-					given by the seller
+					Error: Invalid code. Please Make sure it matches the code given by the seller
 				</p>
 
-				<p className={isVisible3 ? 'invalidcode' : 'validcode'}>
-					Error: Please enter a valid mobile number.
-				</p>
+				<p className={isVisible3 ? 'invalidcode' : 'validcode'}>Error: Please enter a valid mobile number.</p>
 
 				<p>
 					<label htmlFor="number">Checkout Code</label>
@@ -137,19 +136,13 @@ export default function Checkout({
 							type="submit"
 							className="checkout_button"
 							onClick={() => {
-								const validcode = codedata.find(
-									(i) => i === code
-								);
+								const validcode = codedata.find((i) => i === code);
 
 								const numberRegex = new RegExp('^[0-9]*$');
 
 								if (name.length <= 0 || number.length <= 0) {
 									handleClick();
-								} else if (
-									!numberRegex.test(number) ||
-									number.length < 11 ||
-									number.length > 11
-								) {
+								} else if (!numberRegex.test(number) || number.length < 11 || number.length > 11) {
 									setIsVisible(true);
 									setIsVisible2(true);
 									handleClick3();
@@ -168,26 +161,12 @@ export default function Checkout({
 									const embed = new MessageBuilder()
 										.setTitle('Order Form')
 										.setColor('#cb1e1e')
-										.addField(
-											`Name:`,
-											`\`\`\`${name}\`\`\``
-										)
-										.addField(
-											`Mobile Number:`,
-											`\`\`\`${number}\`\`\``
-										)
-										.addField(
-											`Order:`,
-											`\`\`\`${order}\`\`\``
-										)
-										.addField(
-											`Code:`,
-											`\`\`\`${code}\`\`\``
-										)
-										.addField(
-											`Total Price:`,
-											`\`\`\`₱ ${price}\`\`\``
-										)
+										.addField(`Name:`, `\`\`\`${name}\`\`\``)
+										.addField(`Mobile Number:`, `\`\`\`${number}\`\`\``)
+										.addField(`Order:`, `\`\`\`${order}\`\`\``)
+										.addField(`Code:`, `\`\`\`${code}\`\`\``)
+										.addField(`Note:`, `\`\`\`${note || "None"}\`\`\``)
+										.addField(`Total Price:`, `\`\`\`₱ ${price}\`\`\``)
 										.setFooter('Art Avenue')
 										.setTimestamp();
 
