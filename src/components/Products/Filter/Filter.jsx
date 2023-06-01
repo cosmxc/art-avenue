@@ -37,6 +37,9 @@ export default function Filter() {
 				<button onClick={() => dispath({ type: 'AmongUs' })} className="filter_btn">
 					Among Us
 				</button>
+				<button onClick={() => dispath({ type: 'Starrail' })} className="filter_btn">
+					Star Rail
+				</button>
 			</div>
 		</div>
 	);

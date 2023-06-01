@@ -62,6 +62,10 @@ const filterReduce = (state, action) => {
 			return {
 				...filterItemsHandler('Cat'),
 			};
+		case 'Starrail':
+			return {
+				...filterItemsHandler('Starrail'),
+			};
 
 		default:
 			return state;
