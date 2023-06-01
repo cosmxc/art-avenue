@@ -50,6 +50,19 @@ const filterReduce = (state, action) => {
 			return {
 				...filterItemsHandler('BTS'),
 			};
+		case 'AmongUs':
+			return {
+				...filterItemsHandler('AmongUs'),
+			};
+		case 'BTOB':
+			return {
+				...filterItemsHandler('BTOB'),
+			};
+		case 'CAT':
+			return {
+				...filterItemsHandler('Cat'),
+			};
+
 		default:
 			return state;
 	}

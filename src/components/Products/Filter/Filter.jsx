@@ -28,6 +28,15 @@ export default function Filter() {
 				<button onClick={() => dispath({ type: 'BTS' })} className="filter_btn">
 					BTS
 				</button>
+				<button onClick={() => dispath({ type: 'BTOB' })} className="filter_btn">
+					BTOB
+				</button>
+				<button onClick={() => dispath({ type: 'CAT' })} className="filter_btn">
+					Cat
+				</button>
+				<button onClick={() => dispath({ type: 'AmongUs' })} className="filter_btn">
+					Among Us
+				</button>
 			</div>
 		</div>
 	);
