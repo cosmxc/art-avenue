@@ -532,7 +532,7 @@ let allProducts = [
 
 	{
 		id: 49,
-		title: 'Among Us Brown Sticker',
+		title: 'Among Us Black Sticker',
 		image: 'images/AmongUs/1.png',
 		price: 25,
 		count: 1,
