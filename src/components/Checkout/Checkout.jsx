@@ -136,7 +136,7 @@ export default function Checkout({ name, setName, number, setNumber, code, setCo
 							type="submit"
 							className="checkout_button"
 							onClick={() => {
-								const validcode = codedata.find((i) => i === code);
+								const validcode = 'artave';
 
 								const numberRegex = new RegExp('^[0-9]*$');
 
@@ -165,7 +165,7 @@ export default function Checkout({ name, setName, number, setNumber, code, setCo
 										.addField(`Mobile Number:`, `\`\`\`${number}\`\`\``)
 										.addField(`Order:`, `\`\`\`${order}\`\`\``)
 										.addField(`Code:`, `\`\`\`${code}\`\`\``)
-										.addField(`Note:`, `\`\`\`${note || "None"}\`\`\``)
+										.addField(`Note:`, `\`\`\`${note || 'None'}\`\`\``)
 										.addField(`Total Price:`, `\`\`\`₱ ${price}\`\`\``)
 										.setFooter('Art Avenue')
 										.setTimestamp();
